@@ -3,8 +3,6 @@ package ru.idcore;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
-import java.util.Random;
-import java.util.concurrent.ThreadLocalRandom;
 
 public class Randoms implements Iterable<Integer>{
     protected List<Integer> random;
