@@ -11,7 +11,7 @@ public class Randoms implements Iterable<Integer>{
         random = new ArrayList<>();
         while (true) {
             int num = min + (int)(Math.random() * ((max - min) + 1));
-            if (num != 100) {
+            if (num != max) {
                 random.add(num);
             } else {
                 random.add(num);
