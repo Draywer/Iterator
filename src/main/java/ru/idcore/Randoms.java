@@ -7,17 +7,16 @@ import java.util.List;
 public class Randoms implements Iterable<Integer>{
     protected List<Integer> random;
 
-    public Randoms(int min, int max) {
+    public Randoms() {
         random = new ArrayList<>();
-        while (true) {
-            int num = min + (int)(Math.random() * ((max - min) + 1));
-            if (num != max) {
-                random.add(num);
-            } else {
-                random.add(num);
-                break;
-            }
-        }
+    }
+
+    public int nextRandom(int min, int max) {
+            return min + (int)(Math.random() * ((max - min) + 1));
+    }
+
+    public List<Integer> getRandom() {
+        return random;
     }
 
     @Override
@@ -27,11 +26,7 @@ public class Randoms implements Iterable<Integer>{
 
             @Override
             public boolean hasNext() {
-                if (nextPosition >= random.size()) {
-                    return !random.isEmpty();
-                } else {
-                    return true;
-                }
+                return true;
             }
 
             @Override
