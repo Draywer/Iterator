@@ -7,7 +7,7 @@ public class Main {
         for (int r : new Randoms(min, max)) {
             System.out.println("Случайное число: " + r);
             if (r == max) {
-                System.out.println("Выпало число 100, давайте на этом закончим");
+                System.out.printf("Выпало число %d, давайте на этом закончим\n", max);
                 break;
             }
         }
