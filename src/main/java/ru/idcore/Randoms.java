@@ -4,25 +4,18 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class Randoms implements Iterable<Integer>{
-    protected List<Integer> random;
+public class Randoms implements Iterable<Integer> {
+    private int min;
+    private int max;
 
-    public Randoms() {
-        random = new ArrayList<>();
-    }
-
-    public int nextRandom(int min, int max) {
-            return min + (int)(Math.random() * ((max - min) + 1));
-    }
-
-    public List<Integer> getRandom() {
-        return random;
+    public Randoms(int min, int max) {
+        this.min = min;
+        this.max = max;
     }
 
     @Override
     public Iterator<Integer> iterator() {
         return new Iterator<>() {
-            private int nextPosition = 0;
 
             @Override
             public boolean hasNext() {
@@ -31,11 +24,7 @@ public class Randoms implements Iterable<Integer>{
 
             @Override
             public Integer next() {
-                if (nextPosition >= random.size()) {
-                    return random.get(0);
-                } else {
-                    return random.get(nextPosition++);
-                }
+                return min + (int) (Math.random() * ((max - min) + 1));
             }
         };
     }
